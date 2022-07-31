@@ -10,6 +10,11 @@
 
 </head>
 <body>
+{% if user.is_authenticated %}
+    <span>Hello {{ user.username }}</span> | <a href="{% url 'account_logout' %}">Log out</a>
+    {%  else %}
+    <a href="{% url 'account_login' %}">Login</a> <span>|</span> <a href="{% url 'account_signup' %}">Sign up</a>
+{% endif %}
 <nav class="navbar navbar-expand-custom navbar-mainbg">
         <a class="navbar-brand navbar-logo" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
