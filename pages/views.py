@@ -13,4 +13,11 @@ class AboutUsPageView(TemplateView):
 class ManageUserPageView(TemplateView):
     template_name = 'pages/manage_user.html'
 
+
+class ElectronicCaseReportFormView(TemplateView):
+    template_name = 'eCRF/eCRF_page.html'
+
+
+class DemoInformationFormView(TemplateView):
+    template_name = 'eCRF/demo_info.html'
 # Create your views here.
