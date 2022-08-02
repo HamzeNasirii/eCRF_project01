@@ -1,6 +1,7 @@
 from django.db import models
 from django_countries.fields import CountryField
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.shortcuts import reverse
 
 
 class DemoInfo(models.Model):
@@ -46,18 +47,25 @@ class DemoInfo(models.Model):
     def __str__(self):
         return self.national_code
 
+    def get_absolute_url(self):
+        return reverse('patient_detail', args=[self.pk])
+
 
 class HealthInfo(models.Model):
     national_code = models.ForeignKey(DemoInfo, on_delete=models.CASCADE, default=1234567890)
     age = models.PositiveIntegerField(validators=[MinValueValidator(5), MaxValueValidator(130)])
-    weight = models.DecimalField(max_length=3, max_digits=1, decimal_places=1, validators=[MinValueValidator(10),
+    weight = models.DecimalField(max_length=4, max_digits=4, decimal_places=1, validators=[MinValueValidator(10),
                                                                                            MaxValueValidator(400)])
-    height = models.PositiveIntegerField(validators=[MinValueValidator(70), MaxValueValidator(250)])
-    BMI = models.DecimalField(max_length=3, max_digits=1, decimal_places=1, validators=[MinValueValidator(10),
+    height = models.DecimalField(max_length=4, max_digits=4, decimal_places=1, validators=[MinValueValidator(70),
+                                                                                           MaxValueValidator(250)])
+    BMI = models.DecimalField(max_length=3, max_digits=3, decimal_places=1, validators=[MinValueValidator(10),
                                                                                         MaxValueValidator(50)])
     pregnancy_status = models.BooleanField(default=False)
     breast_feeding_status = models.BooleanField(default=False)
     smoking = models.BooleanField(default=False)
+
+    # def get_absolute_url(self):
+    #     return reverse('patient_detail', args=[self.national_code])
 
 
 class ContactInfoAddress(models.Model):

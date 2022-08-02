@@ -26,7 +26,8 @@
                 <td>{{ patient.national_code }}</td>
                 <td>{{ patient.gender }}</td>
                 <td>
-                    <a href="">
+                    {#                    <a href="{% url 'patient_detail' patient.id %}">#}
+                    <a href="{{ patient.get_absolute_url }}">
                         <button type="button" class="btn btn-primary">انتخاب</button>
                     </a>
                 </td>
