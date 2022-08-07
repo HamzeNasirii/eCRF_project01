@@ -1,0 +1,23 @@
+{% extends '_base.html' %}}
+{% load crispy_forms_tags %}
+
+{% block page_title %}
+ویرایش اطلاعات بیمار
+{% endblock %}
+
+
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <!-- Using the formset -->
+    {{ form|crispy }}
+
+    <input type="submit" value="بروزرسانی">
+    <a href="{% url 'patient_list' %}"> خیر </a>
+</form>
+{#    {{ demoinfo.national_code }}#}
+{#    {{ demoinfo.first_name }}#}
+{#    <a href="{% url 'patient_list' %}"> برگشت </a>#}
+{% endblock %}

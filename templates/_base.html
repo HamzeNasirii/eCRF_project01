@@ -23,7 +23,7 @@
 </head>
 <body>
 {% if user.is_authenticated %}
-    <span>سلام {{ user.username }}</span>
+    <span>خوش آمدید {{ user.username }}</span>
 {% else %}
     <a href="{% url 'account_login' %}">Login</a> <span>|</span> <a href="{% url 'account_signup' %}">Sign up</a>
 {% endif %}
@@ -40,19 +40,19 @@
                 <div class="right"></div>
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'patient_list' %}"><i class="fas fa-tachometer-alt"></i>نمایش لیست بیماران</a>
+                <a class="nav-link active" href="{% url 'patient_list' %}"><i class="fas fa-tachometer-alt"></i>نمایش لیست بیماران</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="{% url 'demo_info' %}"><i class="far fa-address-book"></i>ثبتنام بیمار جدید</a>
+                <a class="nav-link active" href="{% url 'patient_create' %}"><i class="far fa-address-book"></i>ثبتنام بیمار جدید</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>مدیریت کاربران</a>
+                <a class="nav-link disabled" href="javascript:void(0);"><i class="far fa-clone"></i>مدیریت کاربران</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>گزارش</a>
+                <a class="nav-link disabled" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>گزارش</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_logout' %}"><i class="far fa-chart-bar"></i>خروج</a>
+                <a class="nav-link active" href="{% url 'account_logout' %}"><i class="far fa-chart-bar"></i>خروج</a>
 {#            </li>#}
 {#            <li class="nav-item">#}
 {#                <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>#}

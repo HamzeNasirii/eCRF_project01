@@ -1,0 +1,16 @@
+{% extends '_base.html' %}}
+{% load crispy_forms_tags %}
+
+{% block page_title %}
+حذف اطلاعات بیمار
+{% endblock %}
+
+
+{% block content %}
+<h3>آیا از حذف بیمار {{ demoinfo.first_name }} {{ demoinfo.last_name }} با کد ملی {{ demoinfo.national_code }} اطمینان دارید؟</h3>
+
+    <input type="submit" value="بله">
+{#    {{ demoinfo.national_code }}#}
+{#    {{ demoinfo.first_name }}#}
+    <a href="{% url 'patient_list' %}"> خیر </a>
+{% endblock %}

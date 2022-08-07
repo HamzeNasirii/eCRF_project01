@@ -5,10 +5,136 @@
 {% endblock %}
 
 {% block content %}
-    <h5>اطلاعات هویتی بیمار</h5>
-    <p>{{ health_info.weight }}</p>
-    <p>{{ health_info.height }}</p>
-    <p>{{ health_info.BMI }}</p>
-    <p>{{ health_info.age }}</p>
+
+    <h5>مشخصات بیمار</h5>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">نام</th>
+            <th scope="col">نام خانوادگی</th>
+            <th scope="col">کد ملی</th>
+            <th scope="col">تاریح تولد</th>
+            <th scope="col">جنسیت</th>
+            <th scope="col">مدرک تحصیلی</th>
+            <th scope="col">وضعیت اقتصادی</th>
+            <th scope="col">وضعیت اشتغال</th>
+            <th scope="col">تاریخ ایجاد پرونده</th>
+        </tr>
+        </thead>
+        <tbody>
+{#        {% for patient in demo_info %}#}
+            <tr>
+                <td>{{ demoinfo.first_name }}</td>
+                <td>{{ demoinfo.last_name }}</td>
+                <td>{{ demoinfo.national_code }}</td>
+                <td>{{ demoinfo.birthday }}</td>
+                <td>{{ demoinfo.gender }}</td>
+                <td>{{ demoinfo.educate_rate }}</td>
+                <td>{{ demoinfo.economic_situation }}</td>
+                <td>{{ demoinfo.status_job }}</td>
+                <td>{{ demoinfo.datetime_created }}</td>
+            </tr>
+{#        {% endfor %}#}
+        </tbody>
+    </table>
+
+    <h5>اطلاعات سلامت</h5>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">سن</th>
+            <th scope="col">وزن</th>
+            <th scope="col">قد</th>
+            <th scope="col">نمایه توده بدنی</th>
+            <th scope="col">وضعیت بارداری</th>
+            <th scope="col">وضعیت شیردهی</th>
+            <th scope="col">سابقه مصرف دخانیات</th>
+        </tr>
+        </thead>
+        <tbody>
+{#        {% for patient in demo_info %}#}
+            <tr>
+                <td>{{ health_info.age }}</td>
+                <td>{{ health_info.weight }}</td>
+                <td>{{ health_info.height }}</td>
+                <td>{{ health_info.BMI }}</td>
+                <td>{{ health_info.pregnancy_status }}</td>
+                <td>{{ health_info.breast_feeding_status }}</td>
+                <td>{{ health_info.smoking }}</td>
+            </tr>
+{#        {% endfor %}#}
+        </tbody>
+    </table>
+{##}
+{#    <h5>شماره های تماس</h5>#}
+{#    <table class="table table-striped">#}
+{#        <thead>#}
+{#        <tr>#}
+{#            <th scope="col">تلفن منزل</th>#}
+{#            <th scope="col">تلفن همراه</th>#}
+{#            <th scope="col">فکس</th>#}
+{#            <th scope="col">تلفن محل کار</th>#}
+{#            <th scope="col">تلفن حامی</th>#}
+{#            <th scope="col">تلفن پراکسی</th>#}
+{#            <th scope="col">تلفن اضطراری</th>#}
+{#        </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for patient in demo_info %}#}
+{#            <tr>#}
+{#                <td>{{ phone_info.home_phone }}</td>#}
+{#                <td>{{ health_info.weight }}</td>#}
+{#                <td>{{ health_info.height }}</td>#}
+{#                <td>{{ health_info.BMI }}</td>#}
+{#                <td>{{ health_info.pregnancy_status }}</td>#}
+{#                <td>{{ health_info.breast_feeding_status }}</td>#}
+{#                <td>{{ health_info.smoking }}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+{##}
+{#    <h5>محل سکونت</h5>#}
+{#    <table class="table table-striped">#}
+{#        <thead>#}
+{#        <tr>#}
+{#            <th scope="col">کشور</th>#}
+{#            <th scope="col">استان</th>#}
+{#            <th scope="col">شهرستان</th>#}
+{#            <th scope="col">روستا</th>#}
+{#            <th scope="col">کدپستی</th>#}
+{#        </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for patient in demo_info %}#}
+{#            <tr>#}
+{#                <td>{{ health_info.age }}</td>#}
+{#                <td>{{ health_info.weight }}</td>#}
+{#                <td>{{ health_info.height }}</td>#}
+{#                <td>{{ health_info.BMI }}</td>#}
+{#                <td>{{ health_info.pregnancy_status }}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+{##}
+{#        <a href="{% url 'patient_update' %}"> </a>#}
+{#         <button class="btn btn-warning" type="button">ویرایش</button>#}
+{#        <a href="{% url 'patient_list' %}"> برگشت </a>#}
+{##}
+{#        <p class="review__description text-right px-4 pt-2">{{ health_info.age }}</p>#}
+{#        <p>{{ health_info.weight }}</p>#}
+{#        <p>{{ health_info.height }}</p>#}
+{#        <p>{{ health_info.BMI }}</p>#}
+{#        <p>{{ health_info.pregnancy_status }}</p>#}
+{#        <p>{{ health_info.breast_feeding_status }}</p>#}
+{#        <p>{{ health_info.smoking }}</p>#}
+
+
+
+    {#    <p>{{ health_info.weight }}</p>#}
+    {#    <p>{{ health_info.height }}</p>#}
+    {#    <p>{{ health_info.BMI }}</p>#}
+    {#    <p>{{ health_info.age }}</p>#}
 
 {% endblock %}

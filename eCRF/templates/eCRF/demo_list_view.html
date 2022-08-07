@@ -1,7 +1,7 @@
 {% extends '_base.html' %}}
 {% load crispy_forms_tags %}
 {% block page_title %}
-    demo Info
+    patient list
 {% endblock %}
 
 {% block content %}
@@ -29,6 +29,12 @@
                     {#                    <a href="{% url 'patient_detail' patient.id %}">#}
                     <a href="{{ patient.get_absolute_url }}">
                         <button type="button" class="btn btn-primary">انتخاب</button>
+                    </a>
+                    <a href="{{ patient.get_absolute_url }}edit/">
+                        <button type="button" class="btn btn-warning">ویرایش</button>
+                    </a>
+                    <a href="{{ patient.get_absolute_url }}delete/">
+                        <button type="button" class="btn btn-danger">حذف</button>
                     </a>
                 </td>
             </tr>
